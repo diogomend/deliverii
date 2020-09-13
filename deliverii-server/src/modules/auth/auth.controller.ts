@@ -1,21 +1,24 @@
 import { AuthService } from './auth.service';
 import { Controller, Post, Body, Get, UseGuards, HttpCode } from '@nestjs/common';
-import { ApiUnauthorizedResponse, ApiNoContentResponse, ApiUnprocessableEntityResponse } from '@nestjs/swagger';
+import { ApiUnauthorizedResponse, ApiNoContentResponse, ApiUnprocessableEntityResponse, ApiOkResponse, ApiTags, ApiBearerAuth, ApiCreatedResponse, ApiForbiddenResponse } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { UserService } from '../shared/user/user.service';
-import { AuthRegisterDTO, AuthLoginDTO } from './../dtos/auth';
-import { User } from './../helpers/user.decorator';
-import { User as UserDocument } from '../types/user';
-import { sanitizeUser, signJWT, getPayloadFromUser } from '../helpers/auth';
+import { AuthRegisterDTO, AuthLoginDTO } from '../../dtos/auth';
+import { User } from '../../helpers/user.decorator';
+import { User as UserDocument } from '../../types/user';
+import { sanitizeUser, signJWT, getPayloadFromUser } from '../../helpers/auth';
 
 @Controller('auth')
+@ApiTags('Auth')
 export class AuthController {
   constructor(private userService: UserService, private authService: AuthService) {}
 
   @Post('login')
   @HttpCode(200)
+  @ApiOkResponse({ description: 'Returns User and token information'})
   @ApiUnauthorizedResponse({ description: 'Fields missing' })
   @ApiUnprocessableEntityResponse({ description: 'Invalid credentials'})
+
   async login(@Body() userDTO: AuthLoginDTO) {
     const user = await this.userService.findByLogin(userDTO);
     const payload = getPayloadFromUser(user);
@@ -26,6 +29,7 @@ export class AuthController {
 
   @Post('register')
   @HttpCode(201)
+  @ApiCreatedResponse({description: 'User created successfully'})
   @ApiUnauthorizedResponse({ description: 'Fields missing' })
   @ApiUnprocessableEntityResponse({ description: 'Invalid credentials'})
   async register(@Body() userDTO: AuthRegisterDTO) {
@@ -33,9 +37,12 @@ export class AuthController {
   }
 
   @Get('/ping')
+  @ApiBearerAuth()
   @UseGuards(AuthGuard('jwt'))
-  async listMine(@User() user: UserDocument): Promise<any> {
-    return { user };
+  @ApiOkResponse({description: 'Returns user object'})
+  @ApiUnauthorizedResponse({ description: 'Invalid credentials' })
+  async ping(@User() user: UserDocument): Promise<UserDocument> {
+    return user;
   }
 }
 

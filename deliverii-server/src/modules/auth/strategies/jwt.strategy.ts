@@ -1,4 +1,4 @@
-import { Payload } from './../../types/payload';
+import { Payload } from '../../../types/payload';
 import { AuthService } from '../auth.service';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';

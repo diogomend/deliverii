@@ -7,7 +7,16 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
-  const options = new DocumentBuilder().setTitle('Deliverii API').setDescription('Deliverii REST API Documentation').setVersion('1.0.0').build();
+
+  const options = new DocumentBuilder()
+    .setTitle('Deliverii API')
+    .setDescription('Deliverii REST API Documentation')
+    .setVersion('1.0.0')
+    .addBearerAuth(
+      { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
+    )
+    .build();
+
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
   await app.listen(process.env.APP_PORT);

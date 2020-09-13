@@ -1,6 +1,6 @@
-import { Payload } from './../types/payload';
+import { Payload } from '../../types/payload';
 import { Injectable } from '@nestjs/common';
-import { UserService } from '../shared/user/user.service';
+import { UserService } from '../../modules/shared/user/user.service';
 import { sign } from 'jsonwebtoken';
 
 @Injectable()

@@ -8,19 +8,17 @@ import * as mongoose from 'mongoose';
 import { INestApplication } from '@nestjs/common';
 import { AppController } from '../../src/app.controller';
 import { AppService } from '../../src/app.service';
-import { AuthModule } from '../../src/auth/auth.module';
+import { AuthModule } from '../../src/modules/auth/auth.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AuthService } from '../../src/auth/auth.service';
+import { AuthService } from '../../src/modules/auth/auth.service';
 
-describe('AUTH', () => {
+describe('Auth', () => {
     let app: INestApplication;
 
     beforeAll(async () => {
         await mongoose.connect(process.env.MONGO_AUTOMATION);
         await mongoose.connection.db.dropDatabase();
-       /* const moduleFixture = await Test.createTestingModule({
-            imports: [AppModule],
-          }).compile();*/
+        
           const moduleFixture = await Test.createTestingModule({
             controllers: [AppController],
             providers: [AppService],
@@ -127,7 +125,7 @@ describe('AUTH', () => {
           .get('/auth/ping')
           .set('Authorization', `Bearer ${managerToken}`)
           .expect(({ body }) => {
-            expect(body.user.email).toEqual(manager.email);
+            expect(body.email).toEqual(manager.email);
           })
           .expect(200);
       })

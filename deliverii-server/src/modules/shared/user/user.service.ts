@@ -1,9 +1,9 @@
-import { Payload } from '../../types/payload';
-import { AuthLoginDTO, AuthRegisterDTO } from '../../dtos/auth';
+import { Payload } from '../../../types/payload';
+import { AuthLoginDTO, AuthRegisterDTO } from '../../../dtos/auth';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
-import { validatePassword, sanitizeUser } from '../../helpers/auth';
+import { validatePassword, sanitizeUser } from '../../../helpers/auth';
 import { Model } from 'mongoose';
-import { User } from '../../types/user';
+import { User } from '../../../types/user';
 import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
