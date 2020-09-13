@@ -1,0 +1,2 @@
+include:
+- local: deliverii-server/.gitlab-ci.yml
