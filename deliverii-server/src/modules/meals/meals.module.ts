@@ -4,6 +4,7 @@ import { Module } from '@nestjs/common';
 import { MealSchema } from '../../models/meal.schema';
 import { MealService } from './meals.service';
 
+/* istanbul ignore file */
 @Module({
     imports: [
       MongooseModule.forFeature([{ name: 'Meal', schema: MealSchema }]),

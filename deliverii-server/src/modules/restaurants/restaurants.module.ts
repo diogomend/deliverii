@@ -6,7 +6,7 @@ import { RestaurantsController } from './restaurants.controller';
 import { RestaurantsService } from './restaurants.service';
 import { MealsModule } from '../meals/meals.module';
 
-
+/* istanbul ignore file */
 @Module({
     imports: [
       MongooseModule.forFeature([{ name: 'Restaurant', schema: RestaurantSchema }]),

@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
+/* istanbul ignore file */
 export const UserSchema = new mongoose.Schema({
     name: String,
     password: String,

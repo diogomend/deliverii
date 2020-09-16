@@ -1,6 +1,7 @@
 import * as request from 'supertest';
 import { CreateRestaurantDTO, CreateRestaurantMealDTO } from '../../../src/dtos/restaurant'
 import { INestApplication } from '@nestjs/common';
+import { Restaurant } from 'src/types/restaurant';
 
 export const MockRestaurant: CreateRestaurantDTO= {
     name: 'Eataly',
@@ -15,7 +16,7 @@ export const MockMeal: CreateRestaurantMealDTO = {
     price: 12.31
 }
 
-export const CreateRestaurant = async (app, restaurantDTO: CreateRestaurantDTO, managerToken) => {
+export const CreateRestaurant = async (app, restaurantDTO: CreateRestaurantDTO, managerToken): Promise<Restaurant> => {
     let restaurant;
     await request(app.getHttpServer())
     .post('/restaurants')

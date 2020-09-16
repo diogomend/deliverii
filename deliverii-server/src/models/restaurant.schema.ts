@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 
+/* istanbul ignore file */
 export const RestaurantSchema = new mongoose.Schema({
     name: String,
     description: String,

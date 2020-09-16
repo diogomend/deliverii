@@ -43,7 +43,6 @@ describe('Restaurant', () => {
           
           const managerInfo = await loginUser(app, {email: MockManager.email, password: MockManager.password});
           managerToken = managerInfo.token;
-          console.log("MANAGER TOKEN " + managerToken);
 
           const secondManagerInfo = await loginUser(app, {email: `pre-${MockManager.email}`, password: MockManager.password});
           secondManagerToken = secondManagerInfo.token;

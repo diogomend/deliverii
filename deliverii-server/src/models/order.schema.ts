@@ -1,6 +1,7 @@
 import * as mongoose from 'mongoose';
 import { orderStatus } from '../helpers/orders';
 
+/* istanbul ignore file */
 const mealSchema = new mongoose.Schema({
     meal: {
         type: mongoose.Schema.Types.ObjectId,

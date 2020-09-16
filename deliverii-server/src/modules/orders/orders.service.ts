@@ -3,7 +3,6 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { ValidateCurrentStatus } from '../../helpers/orders';
 import { Order } from '../../types/order';
-import { CreateRestaurantDTO, UpdateRestaurantDTO, BlacklistUserDTO, CreateRestaurantMealDTO } from '../../dtos/restaurant';
 import { MealService } from '../meals/meals.service';
 import { CreateOrderDTO, ChangeOrderStatusDTO } from '../../dtos/order';
 import { User } from '../../types/user';
@@ -58,8 +57,18 @@ export class OrdersService {
     return order;
   }
 
-  async getAll(user: User) {
+  async getAll(user: User, restaurantID? : String) {
     if (user.isManager) {
+      if (restaurantID) {
+        if (! await this.restaurantsService.validateRestaurantAccess(restaurantID, user)) {
+          throw new HttpException('Restaurant not found', HttpStatus.NOT_FOUND);
+        }
+
+        return await this.orderModel.find({
+          'restaurant': restaurantID
+        }).sort({created: -1});
+      }
+
       const restaurantList = await this.restaurantsService.listRestaurants(user);
       const ids = restaurantList.map(restaurant => restaurant._id);
 
@@ -99,7 +108,11 @@ export class OrdersService {
       throw new HttpException(`Cant change status to ${newStatus}`, HttpStatus.FORBIDDEN);
     }
 
-    await order.update(changeStatusDTO);
+    let { historyStatus } = order;
+    historyStatus.push({
+      status: newStatus
+    })
+    await order.updateOne({...changeStatusDTO, historyStatus});
     return await this.get(user, orderID);
   }
 

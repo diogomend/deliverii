@@ -59,7 +59,7 @@ export class RestaurantsService {
   ) : Promise<Restaurant> {
       validateID(restaurantID);
       const restaurant = await this.restaurantModel.findById(restaurantID);
-      await restaurant.update(restaurantDTO);
+      await restaurant.updateOne(restaurantDTO);
       
       return await this.restaurantModel.findById(restaurantID).populate('manager');
   }

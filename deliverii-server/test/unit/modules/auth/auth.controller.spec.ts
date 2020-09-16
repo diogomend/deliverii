@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthController } from '../../../src/modules/auth/auth.controller';
-import { AuthService } from '../../../src/modules/auth/auth.service';
-import { AuthLoginDTO, AuthRegisterDTO } from '../../../src/dtos/auth';
-import { UserService } from '../../../src/modules/shared/user/user.service';
+import { AuthController } from '../../../../src/modules/auth/auth.controller';
+import { AuthService } from '../../../../src/modules/auth/auth.service';
+import { AuthLoginDTO, AuthRegisterDTO } from '../../../../src/dtos/auth';
+import { UserService } from '../../../../src/modules/shared/user/user.service';
 import { mock } from 'jest-mock-extended';
-import { User } from '../../../src/types/user';
+import { User } from '../../../../src/types/user';
 
-jest.mock('../../../src/modules/auth/auth.service');
-jest.mock('../../../src/modules/shared/user/user.service');
-jest.mock('../../../src/types/user');
+jest.mock('../../../../src/modules/auth/auth.service');
+jest.mock('../../../../src/modules/shared/user/user.service');
+jest.mock('../../../../src/types/user');
 const login: AuthLoginDTO = {
     email: 'teste',
     password: '123123'

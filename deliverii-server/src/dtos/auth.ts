@@ -1,6 +1,7 @@
 import { IsEmail, IsNotEmpty } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
+/* istanbul ignore file */
 export class AuthRegisterDTO {
     @IsNotEmpty()
     @ApiProperty({type: String})

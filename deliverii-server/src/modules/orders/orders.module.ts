@@ -7,7 +7,7 @@ import { OrdersService } from './orders.service';
 import { MealsModule } from '../meals/meals.module';
 import { RestaurantsModule } from '../restaurants/restaurants.module';
 
-
+/* istanbul ignore file */
 @Module({
     imports: [
       MongooseModule.forFeature([{ name: 'Order', schema: OrderSchema }]),

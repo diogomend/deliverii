@@ -24,12 +24,11 @@ export class MealService {
   async update(mealID: string, mealDTO: CreateRestaurantMealDTO) {
     validateID(mealID);
     const meal = await this.mealModel.findById(mealID);
-
     if (!meal) {
       throw new HttpException('Meal not found', HttpStatus.NOT_FOUND);
     }
 
-    await meal.update(mealDTO);
+    await meal.updateOne(mealDTO);
     return await this.mealModel.findById(mealID).populate('restaurant');
   }
 

@@ -3,6 +3,7 @@ import { Type } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
 import { orderStatus } from '../helpers/orders';
 
+/* istanbul ignore file */
 const status = orderStatus.map(item => item.status);
 
 class Meal {

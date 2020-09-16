@@ -1,6 +1,7 @@
 import { IsNotEmpty, MaxLength } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
+/* istanbul ignore file */
 export enum FoodType {
     Portuguese = "Portuguese"
   };
