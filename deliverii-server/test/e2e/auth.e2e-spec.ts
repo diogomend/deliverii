@@ -10,7 +10,6 @@ import { AppController } from '../../src/app.controller';
 import { AppService } from '../../src/app.service';
 import { AuthModule } from '../../src/modules/auth/auth.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AuthService } from '../../src/modules/auth/auth.service';
 
 describe('Auth', () => {
     let app: INestApplication;
@@ -53,7 +52,6 @@ describe('Auth', () => {
       return request(app.getHttpServer())
         .post('/auth/register')
         .set('Accept', 'application/json')
-        .set('User-Agent', "Automation")
         .send(user)
         .expect(HttpStatus.CREATED);
     });

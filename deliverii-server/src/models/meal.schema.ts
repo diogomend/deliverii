@@ -11,5 +11,9 @@ export const MealSchema = new mongoose.Schema({
     created: {
         type: Date,
         default: Date.now()
+    },
+    restaurant: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Restaurant'
     }
 })
