@@ -35,7 +35,8 @@ export class OrdersService {
       address,
       status: 'Placed',
       historyStatus: [{"status": "Placed"}],
-      restaurant: restaurantID
+      restaurant: restaurantID,
+      created: Date.now()
     };
     
     const { _id } = await this.orderModel.create(createOrder);
@@ -66,7 +67,7 @@ export class OrdersService {
 
         return await this.orderModel.find({
           'restaurant': restaurantID
-        }).sort({created: -1});
+        }).populate('customer').sort({created: -1});
       }
 
       const restaurantList = await this.restaurantsService.listRestaurants(user);
@@ -74,12 +75,12 @@ export class OrdersService {
 
       return await this.orderModel.find({
         'restaurant': { $in: ids}
-      }).sort({created: -1});
+      }).populate('restaurant').sort({created: -1});
     }
 
     return this.orderModel.find({
       customer: user.id
-    }).sort({created: -1})
+    }).populate('restaurant').sort({created: -1})
   }
 
   async get(user: User, orderID: string): Promise<Order> {
@@ -88,7 +89,8 @@ export class OrdersService {
     const order = await this.orderModel
     .findOne({"_id": orderID})
     .populate('meals.meal')
-    .populate('restaurant');
+    .populate('restaurant')
+    .populate('customer');
 
     if (!order) {
       throw new HttpException('Order not found', HttpStatus.NOT_FOUND);
@@ -110,7 +112,8 @@ export class OrdersService {
 
     let { historyStatus } = order;
     historyStatus.push({
-      status: newStatus
+      status: newStatus,
+      date: new Date()
     })
     await order.updateOne({...changeStatusDTO, historyStatus});
     return await this.get(user, orderID);
@@ -125,7 +128,7 @@ export class OrdersService {
       return true;
     }
 
-    if (order.customer != user.id) {
+    if (order.customer._id != user.id) {
       throw new HttpException('Order not found', HttpStatus.FORBIDDEN);
     }
 

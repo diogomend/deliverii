@@ -159,6 +159,27 @@ export class RestaurantsController {
     return this.mealService.getMealsFromRestaurant(restaurantID);
   }
 
+  @Get(':id/meals/:meal')
+  @HttpCode(200)
+  @UseGuards(AuthGuard('jwt'), ManagerGuard)
+  @ApiBearerAuth()
+  @ApiOkResponse({ description: 'Get specific meal from restaurant'})
+  @ApiNotFoundResponse({ description: 'Meal not found'})
+  @ApiUnauthorizedResponse({ description: 'Invalid credentials' })
+  @ApiBadRequestResponse({ description: 'Invalid fields' })
+  @ApiOperation({ summary: 'Get specific meal from restaurant' })
+  async getMeal(
+    @Param('id') restaurantID: string,
+    @Param('meal') meal: string,
+    @User() user: UserDocument
+  ): Promise<Meal[]> {
+    if (! await this.restaurantService.validateRestaurantAccess(restaurantID, user)) {
+      throw new HttpException('Restaurant not found', HttpStatus.NOT_FOUND);
+    }
+
+    return this.mealService.getMealsFromRestaurant(restaurantID,meal);
+  }
+
   @Put(':id/meals/:meal')
   @HttpCode(200)
   @UseGuards(AuthGuard('jwt'), ManagerGuard)

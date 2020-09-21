@@ -17,7 +17,11 @@ export class MealService {
     return await this.mealModel.create(createMealRequest);
   }
 
-  async getMealsFromRestaurant(restaurantID): Promise<Meal[]> {
+  async getMealsFromRestaurant(restaurantID, mealID?): Promise<Meal[]> {
+    if (mealID) {
+      validateID(mealID);
+      return await this.mealModel.find({_id: mealID, restaurant: restaurantID})
+    }
     return await this.mealModel.find({"restaurant" : restaurantID});
   }
 

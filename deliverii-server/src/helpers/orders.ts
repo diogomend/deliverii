@@ -12,6 +12,10 @@ export const ValidateCurrentStatus = (isManager: Boolean, newStatus: string, old
         return false;
     }
     
+    if(oldStatus == "Placed" && newStatus == "Processing" && isManager) {
+        return true;
+    }
+    
     const userType = isManager ? 'manager' : 'user';
 
     for (const [idx, mealObject] of orderStatus.entries()) {

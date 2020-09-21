@@ -1,5 +1,6 @@
-import { IsNotEmpty, MaxLength } from 'class-validator';
+import { IsNotEmpty, MaxLength, IsDecimal } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { Decimal128 } from 'bson';
 
 /* istanbul ignore file */
 export enum FoodType {
@@ -55,6 +56,7 @@ export class CreateRestaurantMealDTO {
     image: string;
 
     @IsNotEmpty()
-    @ApiProperty({type: Number})
-    price: Number;
+    @IsDecimal({decimal_digits: '1,2'})
+    @ApiProperty({type: Decimal128})
+    price: Decimal128;
 }
