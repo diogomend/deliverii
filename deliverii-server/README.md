@@ -21,12 +21,36 @@
   <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
   <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<br/><br/>
 
-## Description
+# Deliverii Server
+Rest API build with NestJS and MongoDB
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Dependencies
+Needs to have MongoDB connection URL to be added to .env file. 
+In this project it was created two databases in [MongoDB Atlas Cloud](https://cloud.mongodb.com/):
+1. deliverii-db - database for normal functions of the app
+2. deliverii-automation - database for automation e2e flow, in which we will dump all the dataset after each test suite
+
+After creating these databases we will need also to create users to access them and extract the connection string for each collection in the format:
+
+```
+mongodb+srv://{user}:{password}@clusterdefault.1ari7.gcp.mongodb.net/{database-name}?retryWrites=true&w=majority
+```
+
+## Environment file
+The app uses an .env file to store the environment variables. In the repository there's an .env.example file with the fields we are waiting for
+```
+APP_PORT=3000
+APP_URL=http://localhost
+MONGO_URI=
+MONGO_AUTOMATION=
+JWT_KEY=
+JWT_EXPIRES=1d
+```
+
+Both MONGO_URI and MONGO_AUTOMATION correspond to the database connection string we mentioned above.
+As for the JWT can be any string
 
 ## Installation
 
@@ -59,16 +83,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
