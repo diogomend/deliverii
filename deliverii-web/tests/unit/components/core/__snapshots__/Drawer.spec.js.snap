@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer.vue is a Vue instance 1`] = `
+<v-navigation-drawer-stub app="true" height="100vh" minivariantwidth="56" mobilebreakpoint="960" src="" tag="nav" width="260" value="true" id="core-navigation-drawer">
+  <v-divider-stub class="mb-1"></v-divider-stub>
+  <v-list-stub tag="div" tile="true" dense="true" nav="true">
+    <v-list-item-group-stub activeclass="text--accent-4">
+      <v-list-item-stub activeclass="" to="/" tag="div">
+        <v-list-item-icon-stub>
+          <v-icon-stub>mdi-store</v-icon-stub>
+        </v-list-item-icon-stub>
+        <v-list-item-title-stub>Restaurants</v-list-item-title-stub>
+      </v-list-item-stub>
+      <v-list-item-stub activeclass="" to="/orders" tag="div">
+        <v-list-item-icon-stub>
+          <v-icon-stub>mdi-food-variant</v-icon-stub>
+        </v-list-item-icon-stub>
+        <v-list-item-title-stub>Orders</v-list-item-title-stub>
+      </v-list-item-stub>
+    </v-list-item-group-stub>
+  </v-list-stub>
+  <v-divider-stub class="mb-2"></v-divider-stub>
+</v-navigation-drawer-stub>
+`;

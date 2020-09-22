@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-        <div class="heading pt-3 pl-3">Restaurants</div>
+      <div class="heading pt-3 pl-3">Restaurants</div>
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"

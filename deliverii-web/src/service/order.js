@@ -26,6 +26,7 @@ export default {
       const res = await api.patch(`orders/${orderID}`, { status: status });
       return res.data;
     } catch (err) {
+      /* istanbul ignore next */
       return Promise.reject();
     }
   },
@@ -35,6 +36,7 @@ export default {
       const res = await api.post(`orders`, request);
       return res.data;
     } catch (err) {
+      /* istanbul ignore next */
       return Promise.reject();
     }
   },

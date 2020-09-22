@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Meal.vue is a Vue instance 1`] = `
+<div class="d-flex">
+  <div class="flex-grow-1">
+    <div class="heading">MOCK_NAME</div>
+    <div class="description"></div>
+    <div class="mt-2">€</div>
+  </div>
+  <div class="d-flex"><button type="button" class="decrease v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-minus theme--light"></i></span></button>
+    <div class="quantity mx-3">0</div> <button type="button" class="increase v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--small"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-plus theme--light"></i></span></button>
+  </div>
+</div>
+`;

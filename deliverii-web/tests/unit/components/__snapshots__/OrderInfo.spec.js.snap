@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderInfo.vue is a Vue instance 1`] = `
+<v-card-text-stub>
+  <div class="mb-5">
+    <div class="heading">Date</div>
+    <div class="description">2019-11-10 00:00</div>
+  </div>
+  <div class="mb-5">
+    <div class="heading">Delivery Address</div>
+    <div class="description">
+      <p></p>
+      <p></p>
+      <p>, </p>
+    </div>
+  </div>
+  <div class="mb-5">
+    <div class="heading">Status</div>
+    <div class="description">
+      <v-btn-stub tag="button" activeclass="" disabled="true" outlined="true" type="button"></v-btn-stub>
+      <!---->
+    </div>
+  </div>
+  <div class="mb-5">
+    <div class="heading">History</div>
+    <div class="description"></div>
+  </div>
+  <!---->
+</v-card-text-stub>
+`;

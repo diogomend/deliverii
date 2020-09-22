@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToastMessage.vue is a Vue instance 1`] = `
+<div>
+  <v-snackbar-stub color="green" value="true" top="true" right="true" timeout="6000">
+
+  </v-snackbar-stub>
+</div>
+`;

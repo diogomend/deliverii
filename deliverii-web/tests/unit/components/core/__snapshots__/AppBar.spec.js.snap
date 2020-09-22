@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar.vue is a Vue instance 1`] = `
+<v-app-bar-stub color="transparent" height="75" tag="header" tile="true" absolute="true" extensionheight="48" flat="true" src="" value="true" app="true" id="app-bar">
+  <!---->
+  <v-toolbar-title-stub class="hidden-sm-and-down font-weight-light"></v-toolbar-title-stub>
+  <v-spacer-stub></v-spacer-stub>
+  <!---->
+</v-app-bar-stub>
+`;
+
+exports[`AppBar.vue is a Vue instance 2`] = `
+<v-app-bar-stub color="transparent" height="75" tag="header" tile="true" absolute="true" extensionheight="48" flat="true" src="" value="true" app="true" id="app-bar">
+  <!---->
+  <v-toolbar-title-stub class="hidden-sm-and-down font-weight-light"></v-toolbar-title-stub>
+  <v-spacer-stub></v-spacer-stub>
+  <!---->
+</v-app-bar-stub>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmDialog.vue is a Vue instance 1`] = `
+<div class="text-center">
+  <v-dialog-stub opendelay="0" closedelay="0" contentclass="" maxwidth="none" origin="center center" retainfocus="true" transition="dialog-transition" width="500">
+    <v-card-stub loaderheight="4" tag="div">
+      <v-card-title-stub></v-card-title-stub>
+      <v-card-text-stub></v-card-text-stub>
+      <v-divider-stub></v-divider-stub>
+      <v-card-actions-stub>
+        <v-spacer-stub></v-spacer-stub>
+        <v-btn-stub color="white" tag="button" activeclass="" type="button" class="cancel-btn">
+          Cancel
+        </v-btn-stub>
+        <v-btn-stub color="error" tag="button" activeclass="" type="button">
+          OK
+        </v-btn-stub>
+      </v-card-actions-stub>
+    </v-card-stub>
+  </v-dialog-stub>
+</div>
+`;

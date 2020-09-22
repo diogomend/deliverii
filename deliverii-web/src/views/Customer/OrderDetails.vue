@@ -62,15 +62,15 @@ export default {
       await this.getOrder();
     },
     async getOrder() {
-        this.toggleLoading(true);
-        const ret = await this.fetchOrder(this.id);
-        if (ret) {
-            this.order = ret;
-            this.meals = this.order.meals.map(mealObj => {
-                return { quantity: mealObj.quantity, ...mealObj.meal };
-            });
-        }
-        this.toggleLoading(false);
+      this.toggleLoading(true);
+      const ret = await this.fetchOrder(this.id);
+      if (ret) {
+        this.order = ret;
+        this.meals = this.order.meals.map(mealObj => {
+          return { quantity: mealObj.quantity, ...mealObj.meal };
+        });
+      }
+      this.toggleLoading(false);
     }
   },
   computed: {

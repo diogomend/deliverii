@@ -40,27 +40,6 @@ export default {
     }
   },
   mixins: [MobileMixin],
-
-  /*data: () => ({
-    items: [
-      {
-        icon: "mdi-home",
-        title: "Home",
-        to: "/admin/"
-      },
-      {
-        icon: "mdi-store",
-        title: "Restaurants",
-        to: "/admin/restaurants"
-      },
-      {
-        icon: "mdi-food-variant",
-        title: "Orders",
-        to: "/admin/orders"
-      },
-    ]
-  }),*/
-
   computed: {
     ...mapGetters({
       drawer: "appState/drawer",
@@ -75,12 +54,6 @@ export default {
       }
 
       return USER_DRAWER;
-    },
-    profile() {
-      return {
-        avatar: true,
-        title: "avatar"
-      };
     },
     showDrawer: {
       get() {

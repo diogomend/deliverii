@@ -61,7 +61,10 @@
                 ref="password"
               ></v-text-field>
             </ValidationProvider>
-            <v-checkbox v-model="isManager" label="Restaurant Manager Account"></v-checkbox>
+            <v-checkbox
+              v-model="isManager"
+              label="Restaurant Manager Account"
+            ></v-checkbox>
             <v-layout
               class="mx-0"
               row="row"
@@ -122,14 +125,12 @@ extend("email", {
   message: "Email must be valid"
 });
 
-extend('password', {
-  params: ['target'],
+extend("password", {
+  params: ["target"],
   validate(value, { target }) {
-    console.log(value);
-    console.log(target);
     return value === target;
   },
-  message: 'Password confirmation does not match'
+  message: "Password confirmation does not match"
 });
 
 export default {
@@ -182,8 +183,6 @@ export default {
       if (res) {
         return this.$router.push("/login");
       }
-
-      console.log(res);
     }
   }
 };

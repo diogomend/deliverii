@@ -14,7 +14,7 @@
 
         <v-card-actions>
           <v-spacer />
-          <v-btn color="white" @click="dialogModal = false">
+          <v-btn color="white" class="cancel-btn" @click="dialogModal = false">
             Cancel
           </v-btn>
           <v-btn color="error" :disabled="processing" @click="confirmDialog()">

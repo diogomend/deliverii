@@ -17,7 +17,7 @@ const actions = {
     }
     return false;
   },
-  register: async ({ dispatch }, registerObj)=> {
+  register: async ({ dispatch }, registerObj) => {
     const res = await auth.register(registerObj);
     if (res) {
       await dispatch(
@@ -45,7 +45,7 @@ const actions = {
       const user = auth.getUserInfo();
       commit("SET_USER", user);
     }
-  },
+  }
 };
 
 const mutations = {

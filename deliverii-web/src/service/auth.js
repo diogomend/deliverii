@@ -22,7 +22,7 @@ export default {
     try {
       return await api.post(`auth/register`, registerObj);
     } catch (err) {
-      return false
+      return false;
     }
   },
   logoutUser() {

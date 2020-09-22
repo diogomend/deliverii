@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressForm.vue is a Vue instance 1`] = `
+<div class="container transition">
+  <div class="v-card__text"><span><form><span><div class="v-input theme--light v-text-field"><div class="v-input__control"><div class="v-input__slot"><div class="v-text-field__slot"><label for="input-9" class="v-label theme--light" style="right: 0px; position: absolute;">Address</label><input id="input-9" type="text"></div></div><div class="v-text-field__details"><div class="v-messages theme--light"><div class="v-messages__wrapper"></div></div></div></div></div></span> <span><div class="v-input theme--light v-text-field"><div class="v-input__control"><div class="v-input__slot"><div class="v-text-field__slot"><label for="input-13" class="v-label theme--light" style="right: 0px; position: absolute;">Address 2</label><input id="input-13" type="text"></div></div><div class="v-text-field__details"><div class="v-messages theme--light"><div class="v-messages__wrapper"></div></div></div></div></div></span> <span><div class="v-input theme--light v-text-field"><div class="v-input__control"><div class="v-input__slot"><div class="v-text-field__slot"><label for="input-17" class="v-label theme--light" style="right: 0px; position: absolute;">City</label><input id="input-17" type="text"></div></div><div class="v-text-field__details"><div class="v-messages theme--light"><div class="v-messages__wrapper"></div></div></div></div></div></span> <span><div class="v-input theme--light v-text-field"><div class="v-input__control"><div class="v-input__slot"><div class="v-text-field__slot"><label for="input-21" class="v-label theme--light" style="right: 0px; position: absolute;">Postcode</label><input id="input-21" type="text"></div></div><div class="v-text-field__details"><div class="v-messages theme--light"><div class="v-messages__wrapper"></div></div></div></div></div></span>
+    <div class="layout mx-0 row align-center justify-end">
+      <div class="flex text-right xs6"><button type="submit" class="ma-0 text-none v-btn v-btn--contained theme--light v-size--default primary"><span class="v-btn__content">Confirm Order</span></button></div>
+    </div>
+    </form>
+    </span>
+  </div>
+</div>
+`;

@@ -25,7 +25,7 @@ export const GET_NEXT_STATE = currentState => {
   if (currentState == "Placed") {
     return ORDER_STATUS[2];
   }
-  
+
   for (const [idx, status] of ORDER_STATUS.entries()) {
     if (status.status == currentState && idx < ORDER_STATUS.length - 1) {
       return ORDER_STATUS[idx + 1];

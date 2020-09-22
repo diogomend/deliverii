@@ -89,7 +89,6 @@ extend("email", {
   message: "Email must be valid"
 });
 
-
 export default {
   name: "AdminRestaurantEdit",
   components: {

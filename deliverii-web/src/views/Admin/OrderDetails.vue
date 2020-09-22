@@ -10,7 +10,7 @@
               <div class="heading pt-3 pl-3">Order Info</div>
             </v-card-title>
             <v-card-text>
-            <order-info
+              <order-info
                 :orderID="orderID"
                 :address="order.address"
                 :status="order.status"
@@ -22,15 +22,15 @@
           </v-card>
         </v-col>
         <v-col cols="12" lg="6" mb="5">
-           <v-card>
-             <v-card-title>
+          <v-card>
+            <v-card-title>
               <div class="heading pt-3 pl-3">Meals</div>
             </v-card-title>
             <v-card-text>
               <order-meals :cart="meals"></order-meals>
             </v-card-text>
-           </v-card>
-           <v-card class="mt-10">
+          </v-card>
+          <v-card class="mt-10">
             <v-card-title>
               <div class="heading pt-3 pl-3">Customer Info</div>
             </v-card-title>
@@ -45,24 +45,24 @@
                   <td>{{ customer.email }}</td>
                 </tr>
               </table>
+
               <v-spacer></v-spacer>
 
               <v-fab-transition>
-              <v-btn
-                v-if="!isBlacklisted"
-                color="error"
-                dark
-              
-                @click="openModal = true"
-              >
-                Blacklist Customer
-              </v-btn>
-              <v-btn color="error" bottom disabled
-                >Customer blacklisted</v-btn
-              >
-            </v-fab-transition>
+                <v-btn
+                  v-if="!isBlacklisted"
+                  color="error"
+                  dark
+                  @click="openModal = true"
+                >
+                  Blacklist Customer
+                </v-btn>
+                <v-btn color="error" bottom disabled
+                  >Customer blacklisted</v-btn
+                >
+              </v-fab-transition>
             </v-card-text>
-           </v-card>
+          </v-card>
         </v-col>
       </v-row>
     </template>
@@ -159,7 +159,7 @@ export default {
         this.date = formatDate(order.created);
         this.customer = order.customer;
         this.meals = this.order.meals.map(mealObj => {
-            return { quantity: mealObj.quantity, ...mealObj.meal };
+          return { quantity: mealObj.quantity, ...mealObj.meal };
         });
         this.restaurant = order.restaurant;
         this.status = order.status;

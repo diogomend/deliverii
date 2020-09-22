@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "vue-cli-service test:unit --coverage",
+    "test": "vue-cli-service test:unit --coverage --restoreMocks --runInBand",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
@@ -13,6 +13,7 @@
   "dependencies": {
     "@vue/composition-api": "^0.5.0",
     "axios": "^0.19.2",
+    "babel-jest": "^26.3.0",
     "core-js": "^3.6.4",
     "dayjs": "^1.8.36",
     "intersection-observer": "^0.10.0",

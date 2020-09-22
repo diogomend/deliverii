@@ -1,5 +1,5 @@
 <template>
-  <v-app v-bind:style="{ background: $vuetify.theme.themes.light.background }">
+  <v-app style="background: rgb(238, 238, 238);">
     <notifications></notifications>
     <app-bar></app-bar>
     <dashboard-core-drawer v-if="isLoggedIn"></dashboard-core-drawer>

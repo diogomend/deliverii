@@ -6,15 +6,6 @@
           :message="alert.message"
           :type="alert.type"
         ></toast-message>
-        <!--<v-snackbar
-          v-model="show"
-          :color="getColor(alert)"
-          right
-          top
-          @click.native="show = false"
-        >
-          {{ alert.message }}
-        </v-snackbar>-->
       </div>
     </transition-group>
   </div>

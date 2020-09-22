@@ -3,16 +3,14 @@
     <div class="flex-grow-1">
       <div class="heading">{{ name }}</div>
       <div class="description">{{ description }}</div>
-      <div v-if="!readOnly" class="mt-2">
-        {{ price }}€
-      </div>
+      <div v-if="!readOnly" class="mt-2">{{ price }}€</div>
     </div>
     <div class="d-flex" v-if="!readOnly">
-      <v-btn small icon @click="decreaseQty">
+      <v-btn small icon @click="decreaseQty" class="decrease">
         <v-icon>mdi-minus</v-icon>
       </v-btn>
       <div class="quantity mx-3">{{ quantity }}</div>
-      <v-btn small icon @click="increaseQty">
+      <v-btn small icon @click="increaseQty" class="increase">
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </div>

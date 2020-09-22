@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderMeals.vue is a Vue instance 1`] = `
+<v-card-text-stub>
+  <div class="text-right">
+    <v-card-subtitle-stub> TOTAL: 0€</v-card-subtitle-stub>
+  </div>
+</v-card-text-stub>
+`;

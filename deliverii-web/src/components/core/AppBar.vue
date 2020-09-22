@@ -24,7 +24,7 @@
 
     <v-spacer />
 
-    <v-btn v-if="isLoggedIn" @click="doLogout">
+    <v-btn v-if="isLoggedIn" @click="doLogout" class="logout-btn">
       <v-icon class="mr-5">mdi-account</v-icon>
       Logout
     </v-btn>

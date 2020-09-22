@@ -7,9 +7,9 @@
     <div class="mb-5">
       <div class="heading">Delivery Address</div>
       <div class="description">
-            <p>{{ address.addr1 }}</p>
-            <p>{{ address.addr2 }}</p>
-            <p>{{ address.postCode }}, {{ address.city }}</p>
+        <p>{{ address.addr1 }}</p>
+        <p>{{ address.addr2 }}</p>
+        <p>{{ address.postCode }}, {{ address.city }}</p>
       </div>
     </div>
     <div class="mb-5">
@@ -31,15 +31,15 @@
     <div class="mb-5">
       <div class="heading">History</div>
       <div class="description">
-          <div v-for="(historySt, i) in history" :key="i">
-              {{ getFormattedDate(historySt.date) }}: {{historySt.status}}
-          </div>
+        <div v-for="(historySt, i) in history" :key="i">
+          {{ getFormattedDate(historySt.date) }}: {{ historySt.status }}
+        </div>
       </div>
     </div>
     <div v-if="canCancel" class="mt-10">
-        <v-btn color="error" bottom right @click="updateOrderState('Canceled')">
-            Cancel
-        </v-btn>
+      <v-btn color="error" bottom right @click="updateOrderState('Canceled')">
+        Cancel
+      </v-btn>
     </div>
   </v-card-text>
 </template>
@@ -74,8 +74,8 @@ export default {
       return formatDate(date);
     },
     async updateToNextStatus() {
-        const { status } = this.nextState;
-        await this.updateOrderState(status);
+      const { status } = this.nextState;
+      await this.updateOrderState(status);
     },
     async updateOrderState(status) {
       const ret = await this.updateStatus({
@@ -95,7 +95,7 @@ export default {
       return GET_NEXT_STATE(this.status);
     },
     canCancel() {
-        return !this.user.isManager && this.status == "Placed";
+      return !this.user.isManager && this.status == "Placed";
     },
     isNextStateEnabled() {
       const nextState = this.nextState;
@@ -115,6 +115,6 @@ export default {
 }
 
 .v-application p {
-      margin-bottom: 0;
+  margin-bottom: 0;
 }
 </style>

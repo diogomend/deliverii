@@ -48,7 +48,7 @@ export default {
     },
     userType: {
       required: false,
-      default: 'manager'
+      default: "manager"
     }
   },
   data() {
@@ -113,7 +113,7 @@ export default {
           totalPrice: `${order.totalPrice} €`,
           date,
           status: order.status,
-          client: order.customer ? order.customer.name : "",
+          client: order.customer ? order.customer.name : ""
         };
       });
     },
@@ -123,13 +123,12 @@ export default {
       }
 
       return this.$router.push(`/order/${item.id}`);
-      
     }
   },
   computed: {
     ...mapGetters({
       getOrders: "order/getOrders"
-    }),
+    })
   },
   async mounted() {
     await this.fetchAll(this.restaurant);

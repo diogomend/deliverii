@@ -1,4 +1,5 @@
 const getTimeout = alert => {
+  /* istanbul ignore next */
   return "timeout" in alert ? alert.timeout : 5000;
 };
 
@@ -23,6 +24,7 @@ const actions = {
 
     commit("ADD_ALERT", { ...alert, id });
 
+    /* istanbul ignore next */
     if (repeatedIndex !== -1) {
       commit("REMOVE_ALERT", repeatedIndex);
     }
@@ -30,6 +32,7 @@ const actions = {
     setTimeout(() => {
       const index = getters.getAlerts.findIndex(elem => elem.id === id);
 
+      /* istanbul ignore next */
       if (index !== -1) {
         commit("REMOVE_ALERT", index);
       }
