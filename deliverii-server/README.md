@@ -84,6 +84,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Documentation - Swagger
+
+Project has documentation available from Swagger in the root of the URL, for instance
+```
+http://localhost:3000/
+```
+
+## Documentation - Postman Collection 
+
+Collection from Postman can be accessed in the following URL
+```
+https://www.getpostman.com/collections/d0772bc10d9b2f2fee8a
+```
+
 ## License
 
   Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).

@@ -19,6 +19,19 @@ function responseSuccessInterceptor(response) {
 
 async function responseErrorInterceptor(error) {
   const { response } = error;
+
+  if (!response) {
+    //network error
+    await store.dispatch(
+      "appState/addAlert",
+      {
+        type: "error",
+        message: `Network error`
+      },
+      { root: true }
+    );
+  }
+
   if (
     response &&
     response.data &&
