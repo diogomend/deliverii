@@ -2,18 +2,19 @@ import * as request from 'supertest';
 import { CreateRestaurantDTO, CreateRestaurantMealDTO } from '../../../src/dtos/restaurant'
 import { INestApplication } from '@nestjs/common';
 import { Restaurant } from 'src/types/restaurant';
+import { Decimal128 } from 'bson';
 
 export const MockRestaurant: CreateRestaurantDTO= {
     name: 'Eataly',
     description: 'This is my description',
     foodType: 'Italian'
   };
-
+  
 export const MockMeal: CreateRestaurantMealDTO = {
     name: 'Menu Big-Mac',
     description: 'Best menu ever',
     image: 'MOCK_IMAGE',
-    price: 12.31
+    price: Decimal128.fromString("12.31")
 }
 
 export const CreateRestaurant = async (app, restaurantDTO: CreateRestaurantDTO, managerToken): Promise<Restaurant> => {

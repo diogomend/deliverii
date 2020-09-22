@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import { Decimal128 } from 'bson';
 
 /* istanbul ignore file */
 export const MealSchema = new mongoose.Schema({
@@ -6,7 +7,7 @@ export const MealSchema = new mongoose.Schema({
     description: String,
     image: String,
     price: {
-        type: Number,
+        type: Decimal128,
         default: 0
     },
     created: {

@@ -22,6 +22,7 @@ describe('Order', () => {
     let restaurantID;
     let mealID;
     let order;
+    let userID;
 
     beforeAll(async () => {
         await mongoose.connect(process.env.MONGO_AUTOMATION);

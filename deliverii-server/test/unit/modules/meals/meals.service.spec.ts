@@ -10,8 +10,9 @@ import { SharedModule } from '../../../../src/modules/shared/shared.module';
 import { mock } from 'jest-mock-extended';
 import { Model } from 'mongoose';
 import { User } from 'src/types/user';
+import { Decimal128 } from 'bson';
 
-const updateObj = {name: 'MOCK_NAME', description: 'MOCK_DESCRIPTION', image: 'MOCK_IMAGE', price: 10};
+const updateObj = {name: 'MOCK_NAME', description: 'MOCK_DESCRIPTION', image: 'MOCK_IMAGE', price: Decimal128.fromString("12.30")};
 describe('MealService', () => {
   let app: TestingModule;
   // @ts-ignore
