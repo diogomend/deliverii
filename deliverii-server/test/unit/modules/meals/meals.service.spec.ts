@@ -1,18 +1,10 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { TestingModule } from '@nestjs/testing';
 import { MealService } from '../../../../src/modules/meals/meals.service';
-import { MealsModule } from '../../../../src/modules/meals/meals.module';
-import { AuthLoginDTO, AuthRegisterDTO } from '../../../../src/dtos/auth';
-import { UserService } from '../../../../src/modules/shared/user/user.service';
-import { sign } from 'jsonwebtoken';
-import { MongooseModule } from '@nestjs/mongoose';
-import { MealSchema } from '../../../../src/models/meal.schema';
-import { SharedModule } from '../../../../src/modules/shared/shared.module';
+
 import { mock } from 'jest-mock-extended';
 import { Model } from 'mongoose';
-import { User } from 'src/types/user';
-import { Decimal128 } from 'bson';
 
-const updateObj = {name: 'MOCK_NAME', description: 'MOCK_DESCRIPTION', image: 'MOCK_IMAGE', price: Decimal128.fromString("12.30")};
+const updateObj = {name: 'MOCK_NAME', description: 'MOCK_DESCRIPTION', image: 'MOCK_IMAGE', price: 12.30};
 describe('MealService', () => {
   let app: TestingModule;
   // @ts-ignore
